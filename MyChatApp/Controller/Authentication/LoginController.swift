@@ -52,9 +52,11 @@ class LoginController: UIViewController {
         let attributedTitle = NSMutableAttributedString(string: "Don't have an account? ",
                                                         attributes: [.font: UIFont.systemFont(ofSize: 16),
                                                                      .foregroundColor: UIColor.white])
+        
         attributedTitle.append(NSAttributedString(string: "Sign UP",
                                                   attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
                                                                .foregroundColor: UIColor.white]))
+        
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(handleShowSignup), for: .touchUpInside)
         return button

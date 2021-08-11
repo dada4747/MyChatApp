@@ -54,7 +54,6 @@ class RegistrationController: UIViewController {
     private let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
-
         button.layer.cornerRadius = 6
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
@@ -95,36 +94,13 @@ class RegistrationController: UIViewController {
         guard let userName = userNameTextField.text?.lowercased() else { return }
         guard let profileImage = profileImage else { return }
 
-
-        guard let imageData = profileImage.jpegData(compressionQuality: 0.3) else { return }
-        let fileName = NSUUID().uuidString
-        let ref = Storage.storage().reference(withPath: "/Profile_Images/\(fileName)")
-        ref.putData(imageData, metadata: nil) { (meta, error) in
+        let credentials = RegistrationCredentials(email: email, password: password, fullname: fullName, username: userName, profileImage: profileImage)
+        AuthService.shared.createUserIn(credentials: credentials) { error in
             if let error = error {
-                print("Debug fail to upload image \(error.localizedDescription)")
+                print("DEBUG: \(error.localizedDescription)")
                 return
             }
-            ref.downloadURL { (url, error) in
-                guard let profileImageUrl = url?.absoluteString else { return }
-                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                    if let error = error {
-                        print("DEBUG: Fail To create user with error \(error.localizedDescription)")
-                    }
-                    guard let uid = result?.user.uid else { return }
-                    let data = ["email": email,
-                                "fullname": fullName,
-                                "profileImageUrl": profileImageUrl,
-                                "uid": uid,
-                                "username": userName ] as [String: Any ]
-                    Firestore.firestore().collection("users").document(uid).setData(data) { error in
-                        if let error = error {
-                            print("Debug fail to upload users data  \(error.localizedDescription)")
-                            return
-                        }
-                        print("DEBUG: did create user ")
-                    }
-                }
-            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -206,7 +182,10 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
         dismiss(animated: true, completion: nil)
     }
 }
+
+// MARK: - AuthenticationControllerProtocol
 extension RegistrationController: AuthenticationControllerProtocol {
+
     func checkFormStatus() {
         if viewModel.formIsValid {
             signUpButton.isEnabled          = true
@@ -217,5 +196,3 @@ extension RegistrationController: AuthenticationControllerProtocol {
         }
     }
 }
-
-

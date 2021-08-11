@@ -6,12 +6,12 @@
 //
 
 import UIKit
-
+import Firebase
 
 protocol AuthenticationControllerProtocol {
     func checkFormStatus()
-    
 }
+
 class LoginController: UIViewController {
     
     // MARK: - Properties
@@ -37,7 +37,6 @@ class LoginController: UIViewController {
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
-
         button.layer.cornerRadius = 6
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
@@ -50,12 +49,12 @@ class LoginController: UIViewController {
     
     private let dontHaveAccButton: UIButton = {
         let button = UIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account? "
-                                                        , attributes: [.font: UIFont.systemFont(ofSize: 16),
-                                                                       .foregroundColor: UIColor.white])
-        attributedTitle.append(NSAttributedString(string: "Sign UP", attributes: [
-                                                    .font: UIFont.boldSystemFont(ofSize: 16),
-                                                    .foregroundColor: UIColor.white]))
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account? ",
+                                                        attributes: [.font: UIFont.systemFont(ofSize: 16),
+                                                                     .foregroundColor: UIColor.white])
+        attributedTitle.append(NSAttributedString(string: "Sign UP",
+                                                  attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
+                                                               .foregroundColor: UIColor.white]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(handleShowSignup), for: .touchUpInside)
         return button
@@ -74,13 +73,23 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-
     }
+    
     // MARK: - Selectore
     
     @objc func handleLogin() {
-        print("Handel login here only")
+        guard let email = emailTextField.text else { return }
+        guard let password = passTextField.text else { return }
+    
+        AuthService.shared.logUserIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBUG: faill to login with error \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
     }
+    
     @objc func handleShowSignup() {
         let vc = RegistrationController()
         navigationController?.pushViewController(vc, animated: true)
@@ -95,10 +104,8 @@ class LoginController: UIViewController {
         checkFormStatus()
     }
     
-    
     // MARK: - Helper
 
-    
     func configureUI() {
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
@@ -115,20 +122,28 @@ class LoginController: UIViewController {
         stack.axis = .vertical
         stack.spacing = 16
         view.addSubview(stack)
-        stack.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
+        stack.anchor(top: iconImage.bottomAnchor,
+                     left: view.leftAnchor,
+                     right: view.rightAnchor,
+                     paddingTop: 32,
+                     paddingLeft: 32,
+                     paddingRight: 32)
         
         view.addSubview(dontHaveAccButton)
         dontHaveAccButton.anchor(left: view.leftAnchor,
                                  bottom: view.safeAreaLayoutGuide.bottomAnchor,
-                                 right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
+                                 right: view.rightAnchor,
+                                 paddingLeft: 32,
+                                 paddingRight: 32)
         
         emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
 
     }
-    
-    
 }
+
+// MARK: - AuthenticationControllerProtocol
+
 extension LoginController: AuthenticationControllerProtocol {
     
     func checkFormStatus() {
@@ -139,6 +154,5 @@ extension LoginController: AuthenticationControllerProtocol {
             loginButton.isEnabled = false
             loginButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         }
-        
     }
 }

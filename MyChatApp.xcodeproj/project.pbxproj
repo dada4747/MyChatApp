@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		D41893A826C144030099BAE2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41893A726C144030099BAE2 /* CustomTextField.swift */; };
 		D41893AA26C20E1F0099BAE2 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41893A926C20E1F0099BAE2 /* LogInViewModel.swift */; };
 		D41893AC26C222730099BAE2 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41893AB26C222730099BAE2 /* RegistrationViewModel.swift */; };
+		D42E304A26C3806E00F87B1C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E304926C3806E00F87B1C /* AuthService.swift */; };
 		D4C64E8926C28ABD009CBFB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4C64E8826C28ABD009CBFB9 /* GoogleService-Info.plist */; };
 		D4CD37C526BFD8BA007B1E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37C426BFD8BA007B1E3F /* AppDelegate.swift */; };
 		D4CD37C726BFD8BA007B1E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37C626BFD8BA007B1E3F /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		D41893A726C144030099BAE2 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D41893A926C20E1F0099BAE2 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		D41893AB26C222730099BAE2 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		D42E304926C3806E00F87B1C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D4C64E8826C28ABD009CBFB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D4CD37C126BFD8BA007B1E3F /* MyChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CD37C426BFD8BA007B1E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +76,6 @@
 				942523BB06E0AD37A16742AC /* Pods-MyChatApp.debug.xcconfig */,
 				1005C810E00DDECBB0B55A2A /* Pods-MyChatApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,6 +150,7 @@
 		D4CD37D926BFDACB007B1E3F /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D42E304926C3806E00F87B1C /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -317,6 +319,7 @@
 				D4CD37C926BFD8BA007B1E3F /* ViewController.swift in Sources */,
 				D41893AC26C222730099BAE2 /* RegistrationViewModel.swift in Sources */,
 				D4CD37F026C1244A007B1E3F /* InputContainerView.swift in Sources */,
+				D42E304A26C3806E00F87B1C /* AuthService.swift in Sources */,
 				D4CD37C526BFD8BA007B1E3F /* AppDelegate.swift in Sources */,
 				D4CD37DF26BFDC2E007B1E3F /* ConversationController.swift in Sources */,
 				D4CD37C726BFD8BA007B1E3F /* SceneDelegate.swift in Sources */,

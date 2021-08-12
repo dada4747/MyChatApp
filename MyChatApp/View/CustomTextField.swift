@@ -12,10 +12,10 @@ class CustomTextField: UITextField {
         
         super.init(frame: .zero)
         
-        borderStyle = .none
-        font = UIFont.systemFont(ofSize: 16)
-        textColor = .white
-        keyboardAppearance = .dark
+        borderStyle           = .none
+        font                  = UIFont.systemFont(ofSize: 16)
+        textColor             = .white
+        keyboardAppearance    = .dark
         attributedPlaceholder = NSAttributedString(string: placeholder,
                                                    attributes: [.foregroundColor : UIColor.white])
     }

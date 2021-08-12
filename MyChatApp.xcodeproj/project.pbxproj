@@ -12,6 +12,11 @@
 		D41893AA26C20E1F0099BAE2 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41893A926C20E1F0099BAE2 /* LogInViewModel.swift */; };
 		D41893AC26C222730099BAE2 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41893AB26C222730099BAE2 /* RegistrationViewModel.swift */; };
 		D42E304A26C3806E00F87B1C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E304926C3806E00F87B1C /* AuthService.swift */; };
+		D42E304C26C3F12C00F87B1C /* chatico.png in Resources */ = {isa = PBXBuildFile; fileRef = D42E304B26C3F12C00F87B1C /* chatico.png */; };
+		D42E304E26C3F3D400F87B1C /* newChat.png in Resources */ = {isa = PBXBuildFile; fileRef = D42E304D26C3F3D400F87B1C /* newChat.png */; };
+		D42E305026C3F64000F87B1C /* newChat1.png in Resources */ = {isa = PBXBuildFile; fileRef = D42E304F26C3F64000F87B1C /* newChat1.png */; };
+		D42E305226C3FA2A00F87B1C /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E305126C3FA2A00F87B1C /* NewMessageController.swift */; };
+		D42E305426C40B7E00F87B1C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E305326C40B7E00F87B1C /* UserCell.swift */; };
 		D4C64E8926C28ABD009CBFB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4C64E8826C28ABD009CBFB9 /* GoogleService-Info.plist */; };
 		D4CD37C526BFD8BA007B1E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37C426BFD8BA007B1E3F /* AppDelegate.swift */; };
 		D4CD37C726BFD8BA007B1E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37C626BFD8BA007B1E3F /* SceneDelegate.swift */; };
@@ -28,6 +33,10 @@
 		D4CD37EC26C04C2E007B1E3F /* chatIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CD37EB26C04C2E007B1E3F /* chatIcon2.png */; };
 		D4CD37EE26C04EC5007B1E3F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37ED26C04EC5007B1E3F /* Extensions.swift */; };
 		D4CD37F026C1244A007B1E3F /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37EF26C1244A007B1E3F /* InputContainerView.swift */; };
+		D4F91ED626C430530088EFE7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F91ED526C430530088EFE7 /* User.swift */; };
+		D4F91ED826C430FF0088EFE7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F91ED726C430FF0088EFE7 /* Service.swift */; };
+		D4F91EDA26C4B8200088EFE7 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F91ED926C4B8200088EFE7 /* ChatController.swift */; };
+		D4F91EDC26C4F3C50088EFE7 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F91EDB26C4F3C50088EFE7 /* CustomInputAccessoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,11 @@
 		D41893A926C20E1F0099BAE2 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		D41893AB26C222730099BAE2 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		D42E304926C3806E00F87B1C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D42E304B26C3F12C00F87B1C /* chatico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatico.png; sourceTree = "<group>"; };
+		D42E304D26C3F3D400F87B1C /* newChat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newChat.png; sourceTree = "<group>"; };
+		D42E304F26C3F64000F87B1C /* newChat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newChat1.png; sourceTree = "<group>"; };
+		D42E305126C3FA2A00F87B1C /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		D42E305326C40B7E00F87B1C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		D4C64E8826C28ABD009CBFB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D4CD37C126BFD8BA007B1E3F /* MyChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CD37C426BFD8BA007B1E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +70,10 @@
 		D4CD37EB26C04C2E007B1E3F /* chatIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatIcon2.png; sourceTree = "<group>"; };
 		D4CD37ED26C04EC5007B1E3F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D4CD37EF26C1244A007B1E3F /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		D4F91ED526C430530088EFE7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D4F91ED726C430FF0088EFE7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		D4F91ED926C4B8200088EFE7 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		D4F91EDB26C4F3C50088EFE7 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +146,9 @@
 				D4CD37C826BFD8BA007B1E3F /* ViewController.swift */,
 				D4CD37CA26BFD8BA007B1E3F /* Main.storyboard */,
 				D4CD37CD26BFD8C0007B1E3F /* Assets.xcassets */,
+				D42E304F26C3F64000F87B1C /* newChat1.png */,
+				D42E304D26C3F3D400F87B1C /* newChat.png */,
+				D42E304B26C3F12C00F87B1C /* chatico.png */,
 				D4CD37EB26C04C2E007B1E3F /* chatIcon2.png */,
 				D4CD37E926C02591007B1E3F /* chatIcon.png */,
 				D4CD37E226BFF719007B1E3F /* profile.png */,
@@ -151,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				D42E304926C3806E00F87B1C /* AuthService.swift */,
+				D4F91ED726C430FF0088EFE7 /* Service.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -160,6 +182,8 @@
 			children = (
 				D4CD37E426C01922007B1E3F /* Authentication */,
 				D4CD37DE26BFDC2E007B1E3F /* ConversationController.swift */,
+				D42E305126C3FA2A00F87B1C /* NewMessageController.swift */,
+				D4F91ED926C4B8200088EFE7 /* ChatController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +201,8 @@
 			children = (
 				D4CD37EF26C1244A007B1E3F /* InputContainerView.swift */,
 				D41893A726C144030099BAE2 /* CustomTextField.swift */,
+				D42E305326C40B7E00F87B1C /* UserCell.swift */,
+				D4F91EDB26C4F3C50088EFE7 /* CustomInputAccessoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +210,7 @@
 		D4CD37DD26BFDB5D007B1E3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D4F91ED526C430530088EFE7 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,9 +285,12 @@
 			files = (
 				D4CD37D126BFD8C0007B1E3F /* LaunchScreen.storyboard in Resources */,
 				D4C64E8926C28ABD009CBFB9 /* GoogleService-Info.plist in Resources */,
+				D42E305026C3F64000F87B1C /* newChat1.png in Resources */,
 				D4CD37E326BFF719007B1E3F /* profile.png in Resources */,
+				D42E304E26C3F3D400F87B1C /* newChat.png in Resources */,
 				D4CD37CE26BFD8C0007B1E3F /* Assets.xcassets in Resources */,
 				D4CD37EA26C02591007B1E3F /* chatIcon.png in Resources */,
+				D42E304C26C3F12C00F87B1C /* chatico.png in Resources */,
 				D4CD37EC26C04C2E007B1E3F /* chatIcon2.png in Resources */,
 				D4CD37E126BFF664007B1E3F /* proIcon.png in Resources */,
 				D4CD37CC26BFD8BA007B1E3F /* Main.storyboard in Resources */,
@@ -322,12 +352,18 @@
 				D42E304A26C3806E00F87B1C /* AuthService.swift in Sources */,
 				D4CD37C526BFD8BA007B1E3F /* AppDelegate.swift in Sources */,
 				D4CD37DF26BFDC2E007B1E3F /* ConversationController.swift in Sources */,
+				D42E305426C40B7E00F87B1C /* UserCell.swift in Sources */,
 				D4CD37C726BFD8BA007B1E3F /* SceneDelegate.swift in Sources */,
+				D4F91ED626C430530088EFE7 /* User.swift in Sources */,
+				D4F91ED826C430FF0088EFE7 /* Service.swift in Sources */,
 				D4CD37E826C01C6C007B1E3F /* RegistrationController.swift in Sources */,
 				D41893AA26C20E1F0099BAE2 /* LogInViewModel.swift in Sources */,
 				D4CD37E626C019F1007B1E3F /* LoginController.swift in Sources */,
 				D4CD37EE26C04EC5007B1E3F /* Extensions.swift in Sources */,
+				D4F91EDA26C4B8200088EFE7 /* ChatController.swift in Sources */,
 				D41893A826C144030099BAE2 /* CustomTextField.swift in Sources */,
+				D42E305226C3FA2A00F87B1C /* NewMessageController.swift in Sources */,
+				D4F91EDC26C4F3C50088EFE7 /* CustomInputAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

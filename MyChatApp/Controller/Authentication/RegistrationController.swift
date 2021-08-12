@@ -94,12 +94,21 @@ class RegistrationController: UIViewController {
         guard let userName = userNameTextField.text?.lowercased() else { return }
         guard let profileImage = profileImage else { return }
 
-        let credentials = RegistrationCredentials(email: email, password: password, fullname: fullName, username: userName, profileImage: profileImage)
+        let credentials = RegistrationCredentials(email: email,
+                                                  password: password,
+                                                  fullname: fullName,
+                                                  username: userName,
+                                                  profileImage: profileImage)
+        
+        showLoader(true, withText: "Signing you up")
+        
         AuthService.shared.createUserIn(credentials: credentials) { error in
             if let error = error {
                 print("DEBUG: \(error.localizedDescription)")
+                self.showLoader(false)
                 return
             }
+            self.showLoader(false)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -125,6 +134,20 @@ class RegistrationController: UIViewController {
     
     @objc func handleShowLogin() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func keyboardWillShow() {
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 88
+        }
+        
+    }
+    
+    @objc func keyboardWillHide() {
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
+        }
+        
     }
     
     //MARK: - Helper
@@ -166,6 +189,9 @@ class RegistrationController: UIViewController {
         passTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         fullNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         userNameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 

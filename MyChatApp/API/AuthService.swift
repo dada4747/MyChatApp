@@ -29,19 +29,21 @@ struct AuthService {
         let ref = Storage.storage().reference(withPath: "/Profile_Images/\(fileName)")
         ref.putData(imageData, metadata: nil) { (meta, error) in
             if let error = error {
-                print("Debug fail to upload image \(error.localizedDescription)")
+                completion!(error)
                 return
             }
+            
             ref.downloadURL { (url, error) in
                 guard let profileImageUrl = url?.absoluteString else { return }
+                
                 Auth.auth().createUser(withEmail: credentials.email, password: credentials.password) { (result, error) in
                     if let error = error {
-                        print("DEBUG: Fail To create user with error \(error.localizedDescription)")
+                        completion!(error)
                     }
                     guard let uid = result?.user.uid else { return }
                     let data = ["email": credentials.email,
                                 "fullname": credentials.fullname,
-                                "profileImageUrl":  profileImageUrl,
+                                "profileImageUrl": profileImageUrl,
                                 "uid": uid,
                                 "username": credentials.username ] as [String: Any ]
                     Firestore.firestore().collection("users").document(uid).setData(data, completion: completion)

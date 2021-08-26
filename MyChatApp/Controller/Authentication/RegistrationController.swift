@@ -12,8 +12,9 @@ class RegistrationController: UIViewController {
 
     // MARK: - Properties
     
-    private var viewModel = RegistrationViewModel()
+    private var viewModel   = RegistrationViewModel()
     private var profileImage: UIImage?
+    weak var delegate       : AuthenticatioDelegate?
     
     private let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -88,28 +89,30 @@ class RegistrationController: UIViewController {
     //MARK: - Selector
     
     @objc func handleRegistration() {
-        guard let email = emailTextField.text else { return }
-        guard let password = passTextField.text else { return }
-        guard let fullName = fullNameTextField.text else { return }
-        guard let userName = userNameTextField.text?.lowercased() else { return }
+        guard let email     = emailTextField.text else { return }
+        guard let password  = passTextField.text else { return }
+        guard let fullName  = fullNameTextField.text else { return }
+        guard let userName  = userNameTextField.text?.lowercased() else { return }
         guard let profileImage = profileImage else { return }
 
-        let credentials = RegistrationCredentials(email: email,
-                                                  password: password,
-                                                  fullname: fullName,
-                                                  username: userName,
+        let credentials = RegistrationCredentials(email     : email,
+                                                  password  : password,
+                                                  fullname  : fullName,
+                                                  username  : userName,
                                                   profileImage: profileImage)
         
         showLoader(true, withText: "Signing you up")
         
         AuthService.shared.createUserIn(credentials: credentials) { error in
             if let error = error {
-                print("DEBUG: \(error.localizedDescription)")
                 self.showLoader(false)
+                self.showError(error.localizedDescription)
                 return
             }
+            self.delegate?.authenticationComplite()
+           // self.dismiss(animated: true, completion: nil)
             self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
+            
         }
     }
     
@@ -210,8 +213,8 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
 }
 
 // MARK: - AuthenticationControllerProtocol
-extension RegistrationController: AuthenticationControllerProtocol {
 
+extension RegistrationController: AuthenticationControllerProtocol {
     func checkFormStatus() {
         if viewModel.formIsValid {
             signUpButton.isEnabled          = true

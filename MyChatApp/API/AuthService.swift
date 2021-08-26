@@ -9,12 +9,13 @@ import Firebase
 import UIKit
 
 struct RegistrationCredentials {
-    let email: String
-    let password: String
-    let fullname: String
-    let username: String
+    let email       : String
+    let password    : String
+    let fullname    : String
+    let username    : String
     let profileImage: UIImage
 }
+
 struct AuthService {
     static let shared = AuthService()
     
@@ -50,6 +51,18 @@ struct AuthService {
                 }
             }
         }
-
+    }
+    
+    func resetePassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+    print("entered email is .......\(email)")
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error == nil {
+                onSuccess()
+                    print("reset is successfull........")
+            } else {
+                print("reset isn unsuccessfult")
+                onError(error!.localizedDescription)
+            }
+        }
     }
 }

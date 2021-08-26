@@ -12,11 +12,11 @@ protocol AuthenticationProtocol {
 }
 
 struct LogInViewModel: AuthenticationProtocol {
-    var email: String?
+    var email   : String?
     var password: String?
     
     var formIsValid: Bool {
-        return email?.isEmpty == false
+        return email?.isEmpty    == false
             && password?.isEmpty == false
     }
 }

@@ -79,9 +79,9 @@ extension UIView {
         widthAnchor.constraint(equalToConstant: width).isActive = true
     }
 }
+
 extension UIViewController {
 
-    
     static let hud = JGProgressHUD(style: .dark)
     
     func configureGradientLayer() {
@@ -105,11 +105,21 @@ extension UIViewController {
         }
     }
     
+    func showNotFound(_ show: Bool, withText text: String? = "NotFound") {
+        view.endEditing(true)
+        UIViewController.hud.textLabel.text = text
+        if show {
+            UIViewController.hud.show(in: view)
+        } else {
+            UIViewController.hud.dismiss()
+        }
+    }
+    
     func configureNavBar(withTitle title: String, preferLargeTitles: Bool) {
         let appearanc = UINavigationBarAppearance()
         appearanc.configureWithOpaqueBackground()
         appearanc.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearanc.backgroundColor = .darkGray
+        appearanc.backgroundImage = #imageLiteral(resourceName: "429388") 
 
         navigationController?.navigationBar.standardAppearance   = appearanc
         navigationController?.navigationBar.compactAppearance    = appearanc
@@ -119,5 +129,17 @@ extension UIViewController {
         navigationController?.navigationBar.tintColor            = .white
         navigationController?.navigationBar.isTranslucent        = true
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+    }
+    func showError(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    func showSuccessAlert(){
+        let alert = UIAlertController(title: "Success", message: "Email is send to inbox", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }

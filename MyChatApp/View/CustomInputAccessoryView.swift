@@ -6,9 +6,18 @@
 //
 
 import UIKit
+import Firebase
+
+protocol CustomInputAccessoryViewDelegate: class {
+    func inputView(_ inputView: CustomInputAccessoryView, wantsToSend message: String)
+    func inputImageView( wantsToSendImage image: UIImage)
+}
+
 class CustomInputAccessoryView: UIView {
     
     // MARK: - Properties
+    weak var delegate: CustomInputAccessoryViewDelegate?
+    
     private lazy var messageInputTextView: UITextView = {
         let tv = UITextView()
         tv.font = UIFont.systemFont(ofSize: 16)
@@ -55,11 +64,11 @@ class CustomInputAccessoryView: UIView {
 
         addSubview(messageInputTextView)
         messageInputTextView.anchor(top: topAnchor,
-                                    left: leftAnchor,
+                                 //   left: leftAnchor,
                                     bottom: safeAreaLayoutGuide.bottomAnchor,
                                     right: sendButton.leftAnchor,
                                     paddingTop: 12,
-                                    paddingLeft: 4,
+                                 //   paddingLeft: 4,
                                     paddingBottom: 8,
                                     paddingRight: 8)
         addSubview(placeholderLabel)
@@ -68,6 +77,25 @@ class CustomInputAccessoryView: UIView {
         placeholderLabel.centerY(inView: messageInputTextView)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextInputChange), name: UITextView.textDidChangeNotification, object: nil)
+        
+        let uploadImageView = UIImageView()
+        uploadImageView.isUserInteractionEnabled = true
+        uploadImageView.image = UIImage(systemName: "paperclip.circle.fill")
+        uploadImageView.tintColor = .systemPink
+        uploadImageView.translatesAutoresizingMaskIntoConstraints = false
+        uploadImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleUploadTap)))
+            
+        addSubview(uploadImageView)
+        uploadImageView.anchor(top:topAnchor,
+                         left: leftAnchor,
+                         right: messageInputTextView.leftAnchor,
+                         paddingTop: 12,
+                         paddingLeft: 4,
+                         paddingBottom: 8,
+                         paddingRight: 8)
+        uploadImageView.setDimensions(height: 40, width: 40)
+        
+        
     }
     
     required init?(coder: NSCoder) {
@@ -85,7 +113,43 @@ class CustomInputAccessoryView: UIView {
     }
     
     @objc func handleSendMessage() {
-        print("hadle send message....... ")
+        guard let message = messageInputTextView.text else { return }
+        delegate?.inputView(self, wantsToSend: message)
     }
     
+    @objc func handleUploadTap() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        self.window?.rootViewController?.present(imagePickerController, animated: true)
+    }
+    
+    // MARK: - Helper
+    
+    func clearMessageText() {
+        messageInputTextView.text = nil
+        placeholderLabel.isHidden = false
+    }
+}
+
+extension CustomInputAccessoryView: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage") ] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage") ] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker {
+            delegate?.inputImageView(wantsToSendImage: selectedImage)
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 }

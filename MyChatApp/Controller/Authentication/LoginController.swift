@@ -13,13 +13,18 @@ protocol AuthenticationControllerProtocol {
     func checkFormStatus()
 }
 
+protocol AuthenticatioDelegate: class {
+    func authenticationComplite()
+}
 class LoginController: UIViewController {
     
     // MARK: - Properties
     
     private var viewModel = LogInViewModel()
     
-    private let iconImage: UIImageView = {
+    weak var delegate     : AuthenticatioDelegate?
+    
+    private let iconImage : UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "chatIcon2.png")
         return iv
@@ -47,6 +52,22 @@ class LoginController: UIViewController {
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
+    
+    private let forgetPasswordButton: UIButton = {
+        let button = UIButton(type: .system)
+        let attributedTitle = NSMutableAttributedString(string: "Forget password? ",
+                                                        attributes: [.font: UIFont.systemFont(ofSize: 16),
+                                                                     .foregroundColor: UIColor.white])
+        
+        attributedTitle.append(NSAttributedString(string: "Reset Password",
+                                                  attributes: [.font: UIFont.boldSystemFont(ofSize: 16),
+                                                               .foregroundColor: UIColor.white]))
+        
+        button.setAttributedTitle(attributedTitle, for: .normal)
+        button.addTarget(self, action: #selector(handleShowResetPassword), for: .touchUpInside)
+        return button
+    }()
+    
     
     private let dontHaveAccButton: UIButton = {
         let button = UIButton(type: .system)
@@ -87,17 +108,24 @@ class LoginController: UIViewController {
         showLoader(true, withText: "Logging In")
         AuthService.shared.logUserIn(withEmail: email, password: password) { result, error in
             if let error = error {
-                print("DEBUG: faill to login with error \(error.localizedDescription)")
+                self.showError(error.localizedDescription)
                 self.showLoader(false)
                 return
             }
+            self.delegate?.authenticationComplite()
+            //self.dismiss(animated: true, completion: nil)
             self.showLoader(false)
-            self.dismiss(animated: true, completion: nil)
+
         }
+    }
+    @objc func handleShowResetPassword() {
+        let vc = ForgetPasswordController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func handleShowSignup() {
         let vc = RegistrationController()
+        vc.delegate = delegate
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -135,6 +163,13 @@ class LoginController: UIViewController {
                      paddingLeft: 32,
                      paddingRight: 32)
         
+        view.addSubview(forgetPasswordButton)
+        forgetPasswordButton.anchor(top:stack.bottomAnchor,
+                                    left:view.leftAnchor,
+                                    right: view.rightAnchor,
+                                    paddingLeft: 32,
+                                    paddingRight: 32)
+        
         view.addSubview(dontHaveAccButton)
         dontHaveAccButton.anchor(left: view.leftAnchor,
                                  bottom: view.safeAreaLayoutGuide.bottomAnchor,
@@ -154,10 +189,10 @@ extension LoginController: AuthenticationControllerProtocol {
     
     func checkFormStatus() {
         if viewModel.formIsValid {
-            loginButton.isEnabled = true
+            loginButton.isEnabled       = true
             loginButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         } else {
-            loginButton.isEnabled = false
+            loginButton.isEnabled       = false
             loginButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         }
     }

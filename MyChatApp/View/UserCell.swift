@@ -26,14 +26,12 @@ class UserCell: UITableViewCell {
     private let usernameLabel: UILabel = {
         let label   = UILabel()
         label.font  = UIFont.boldSystemFont(ofSize: 14)
-        label.text  = "Spiderman"
         return label
     }()
     private let fullNameLabel: UILabel = {
         let label       = UILabel()
         label.font      = UIFont.systemFont(ofSize: 14)
         label.textColor = .lightGray
-        label.text      = "Peter Parker"
         return label
     }()
     

@@ -17,6 +17,21 @@
 		D42E305026C3F64000F87B1C /* newChat1.png in Resources */ = {isa = PBXBuildFile; fileRef = D42E304F26C3F64000F87B1C /* newChat1.png */; };
 		D42E305226C3FA2A00F87B1C /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E305126C3FA2A00F87B1C /* NewMessageController.swift */; };
 		D42E305426C40B7E00F87B1C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E305326C40B7E00F87B1C /* UserCell.swift */; };
+		D4468BD426C8885E004A2A11 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4468BD326C8885E004A2A11 /* ProfileViewModel.swift */; };
+		D4468BD626C88A90004A2A11 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4468BD526C88A90004A2A11 /* ProfileCell.swift */; };
+		D4468BD826C8955F004A2A11 /* ProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4468BD726C8955F004A2A11 /* ProfileFooter.swift */; };
+		D474FEEC26C72B7E00888101 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474FEEB26C72B7E00888101 /* ConversationCell.swift */; };
+		D474FEEE26C7328F00888101 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474FEED26C7328F00888101 /* ConversationViewModel.swift */; };
+		D474FEF026C7677200888101 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474FEEF26C7677200888101 /* ProfileController.swift */; };
+		D474FEF226C7B5BA00888101 /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474FEF126C7B5BA00888101 /* ProfileHeader.swift */; };
+		D48F0FCB26C57D04000F170F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F0FCA26C57D04000F170F /* MessageCell.swift */; };
+		D48F0FCD26C590B7000F170F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F0FCC26C590B7000F170F /* Message.swift */; };
+		D48F0FCF26C5F0B8000F170F /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F0FCE26C5F0B8000F170F /* MessageViewModel.swift */; };
+		D48F0FD126C60D91000F170F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F0FD026C60D91000F170F /* Constants.swift */; };
+		D4AF247026CBFC35003B61C5 /* 429388.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D4AF246F26CBFC35003B61C5 /* 429388.jpg */; };
+		D4AF247226CC0450003B61C5 /* Screenshot 2021-08-17 at 8.20.36 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AF247126CC0450003B61C5 /* Screenshot 2021-08-17 at 8.20.36 PM.png */; };
+		D4AF247426CD009B003B61C5 /* ForgetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AF247326CD009B003B61C5 /* ForgetPasswordController.swift */; };
+		D4AF247826CD1368003B61C5 /* ForgetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AF247726CD1368003B61C5 /* ForgetPasswordViewModel.swift */; };
 		D4C64E8926C28ABD009CBFB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4C64E8826C28ABD009CBFB9 /* GoogleService-Info.plist */; };
 		D4CD37C526BFD8BA007B1E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37C426BFD8BA007B1E3F /* AppDelegate.swift */; };
 		D4CD37C726BFD8BA007B1E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CD37C626BFD8BA007B1E3F /* SceneDelegate.swift */; };
@@ -52,6 +67,21 @@
 		D42E304F26C3F64000F87B1C /* newChat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newChat1.png; sourceTree = "<group>"; };
 		D42E305126C3FA2A00F87B1C /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		D42E305326C40B7E00F87B1C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D4468BD326C8885E004A2A11 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		D4468BD526C88A90004A2A11 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		D4468BD726C8955F004A2A11 /* ProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFooter.swift; sourceTree = "<group>"; };
+		D474FEEB26C72B7E00888101 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		D474FEED26C7328F00888101 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		D474FEEF26C7677200888101 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		D474FEF126C7B5BA00888101 /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		D48F0FCA26C57D04000F170F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		D48F0FCC26C590B7000F170F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D48F0FCE26C5F0B8000F170F /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		D48F0FD026C60D91000F170F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D4AF246F26CBFC35003B61C5 /* 429388.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 429388.jpg; sourceTree = "<group>"; };
+		D4AF247126CC0450003B61C5 /* Screenshot 2021-08-17 at 8.20.36 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2021-08-17 at 8.20.36 PM.png"; sourceTree = "<group>"; };
+		D4AF247326CD009B003B61C5 /* ForgetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordController.swift; sourceTree = "<group>"; };
+		D4AF247726CD1368003B61C5 /* ForgetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewModel.swift; sourceTree = "<group>"; };
 		D4C64E8826C28ABD009CBFB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D4CD37C126BFD8BA007B1E3F /* MyChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CD37C426BFD8BA007B1E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +140,7 @@
 			children = (
 				D41893A926C20E1F0099BAE2 /* LogInViewModel.swift */,
 				D41893AB26C222730099BAE2 /* RegistrationViewModel.swift */,
+				D4AF247726CD1368003B61C5 /* ForgetPasswordViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -146,6 +177,8 @@
 				D4CD37C826BFD8BA007B1E3F /* ViewController.swift */,
 				D4CD37CA26BFD8BA007B1E3F /* Main.storyboard */,
 				D4CD37CD26BFD8C0007B1E3F /* Assets.xcassets */,
+				D4AF247126CC0450003B61C5 /* Screenshot 2021-08-17 at 8.20.36 PM.png */,
+				D4AF246F26CBFC35003B61C5 /* 429388.jpg */,
 				D42E304F26C3F64000F87B1C /* newChat1.png */,
 				D42E304D26C3F3D400F87B1C /* newChat.png */,
 				D42E304B26C3F12C00F87B1C /* chatico.png */,
@@ -164,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				D4CD37ED26C04EC5007B1E3F /* Extensions.swift */,
+				D48F0FD026C60D91000F170F /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -184,6 +218,7 @@
 				D4CD37DE26BFDC2E007B1E3F /* ConversationController.swift */,
 				D42E305126C3FA2A00F87B1C /* NewMessageController.swift */,
 				D4F91ED926C4B8200088EFE7 /* ChatController.swift */,
+				D474FEEF26C7677200888101 /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				D41893AD26C222F00099BAE2 /* Authentication */,
+				D48F0FCE26C5F0B8000F170F /* MessageViewModel.swift */,
+				D474FEED26C7328F00888101 /* ConversationViewModel.swift */,
+				D4468BD326C8885E004A2A11 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -203,6 +241,11 @@
 				D41893A726C144030099BAE2 /* CustomTextField.swift */,
 				D42E305326C40B7E00F87B1C /* UserCell.swift */,
 				D4F91EDB26C4F3C50088EFE7 /* CustomInputAccessoryView.swift */,
+				D48F0FCA26C57D04000F170F /* MessageCell.swift */,
+				D474FEEB26C72B7E00888101 /* ConversationCell.swift */,
+				D474FEF126C7B5BA00888101 /* ProfileHeader.swift */,
+				D4468BD526C88A90004A2A11 /* ProfileCell.swift */,
+				D4468BD726C8955F004A2A11 /* ProfileFooter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F91ED526C430530088EFE7 /* User.swift */,
+				D48F0FCC26C590B7000F170F /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +264,7 @@
 			children = (
 				D4CD37E526C019F1007B1E3F /* LoginController.swift */,
 				D4CD37E726C01C6C007B1E3F /* RegistrationController.swift */,
+				D4AF247326CD009B003B61C5 /* ForgetPasswordController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -284,8 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4CD37D126BFD8C0007B1E3F /* LaunchScreen.storyboard in Resources */,
+				D4AF247226CC0450003B61C5 /* Screenshot 2021-08-17 at 8.20.36 PM.png in Resources */,
 				D4C64E8926C28ABD009CBFB9 /* GoogleService-Info.plist in Resources */,
 				D42E305026C3F64000F87B1C /* newChat1.png in Resources */,
+				D4AF247026CBFC35003B61C5 /* 429388.jpg in Resources */,
 				D4CD37E326BFF719007B1E3F /* profile.png in Resources */,
 				D42E304E26C3F3D400F87B1C /* newChat.png in Resources */,
 				D4CD37CE26BFD8C0007B1E3F /* Assets.xcassets in Resources */,
@@ -346,22 +393,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D474FEF026C7677200888101 /* ProfileController.swift in Sources */,
 				D4CD37C926BFD8BA007B1E3F /* ViewController.swift in Sources */,
+				D48F0FD126C60D91000F170F /* Constants.swift in Sources */,
+				D4468BD426C8885E004A2A11 /* ProfileViewModel.swift in Sources */,
 				D41893AC26C222730099BAE2 /* RegistrationViewModel.swift in Sources */,
 				D4CD37F026C1244A007B1E3F /* InputContainerView.swift in Sources */,
 				D42E304A26C3806E00F87B1C /* AuthService.swift in Sources */,
+				D48F0FCF26C5F0B8000F170F /* MessageViewModel.swift in Sources */,
+				D4468BD826C8955F004A2A11 /* ProfileFooter.swift in Sources */,
 				D4CD37C526BFD8BA007B1E3F /* AppDelegate.swift in Sources */,
+				D4AF247826CD1368003B61C5 /* ForgetPasswordViewModel.swift in Sources */,
 				D4CD37DF26BFDC2E007B1E3F /* ConversationController.swift in Sources */,
 				D42E305426C40B7E00F87B1C /* UserCell.swift in Sources */,
 				D4CD37C726BFD8BA007B1E3F /* SceneDelegate.swift in Sources */,
 				D4F91ED626C430530088EFE7 /* User.swift in Sources */,
+				D4468BD626C88A90004A2A11 /* ProfileCell.swift in Sources */,
 				D4F91ED826C430FF0088EFE7 /* Service.swift in Sources */,
+				D48F0FCB26C57D04000F170F /* MessageCell.swift in Sources */,
 				D4CD37E826C01C6C007B1E3F /* RegistrationController.swift in Sources */,
+				D474FEEE26C7328F00888101 /* ConversationViewModel.swift in Sources */,
 				D41893AA26C20E1F0099BAE2 /* LogInViewModel.swift in Sources */,
 				D4CD37E626C019F1007B1E3F /* LoginController.swift in Sources */,
+				D474FEF226C7B5BA00888101 /* ProfileHeader.swift in Sources */,
 				D4CD37EE26C04EC5007B1E3F /* Extensions.swift in Sources */,
 				D4F91EDA26C4B8200088EFE7 /* ChatController.swift in Sources */,
 				D41893A826C144030099BAE2 /* CustomTextField.swift in Sources */,
+				D4AF247426CD009B003B61C5 /* ForgetPasswordController.swift in Sources */,
+				D474FEEC26C72B7E00888101 /* ConversationCell.swift in Sources */,
+				D48F0FCD26C590B7000F170F /* Message.swift in Sources */,
 				D42E305226C3FA2A00F87B1C /* NewMessageController.swift in Sources */,
 				D4F91EDC26C4F3C50088EFE7 /* CustomInputAccessoryView.swift in Sources */,
 			);
